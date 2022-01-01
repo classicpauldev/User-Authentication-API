@@ -1,1 +1,1 @@
-Updated project documentation
+Initialized NestJS project for user authentication
