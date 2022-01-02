@@ -1,1 +1,1 @@
-Initialized NestJS project for user authentication
+Installed dependencies: bcrypt, JWT, Passport
