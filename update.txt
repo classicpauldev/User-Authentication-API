@@ -1,1 +1,1 @@
-Installed dependencies: bcrypt, JWT, Passport
+Configured MongoDB with Mongoose
