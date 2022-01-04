@@ -1,1 +1,1 @@
-Configured MongoDB with Mongoose
+Created User schema and model for authentication
