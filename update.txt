@@ -1,1 +1,1 @@
-Implemented user registration endpoint with password hashing
+Configured JWT authentication strategy with Passport
