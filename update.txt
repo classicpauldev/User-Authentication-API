@@ -1,1 +1,1 @@
-Configured JWT authentication strategy with Passport
+Added JWT guard to protect authentication routes
