@@ -1,1 +1,1 @@
-Added JWT guard to protect authentication routes
+Implemented user login and JWT token issuance
