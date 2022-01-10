@@ -1,1 +1,1 @@
-Implemented user login and JWT token issuance
+Refactored user service for better validation
