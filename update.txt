@@ -1,1 +1,1 @@
-Added login route for user authentication
+Created auth module with Passport strategy
