@@ -1,1 +1,1 @@
-Configured JWT strategy for authentication
+Implemented refresh token functionality for session management
