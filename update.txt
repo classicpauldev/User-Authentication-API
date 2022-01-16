@@ -1,1 +1,1 @@
-Implemented refresh token functionality for session management
+Tested registration and login endpoints
