@@ -1,1 +1,1 @@
-Enhanced security by adding user input validation
+Updated dependencies to patch security vulnerabilities
