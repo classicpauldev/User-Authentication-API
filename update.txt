@@ -1,1 +1,1 @@
-Implemented centralized error handling for authentication
+Improved JWT token handling and expiration logic
