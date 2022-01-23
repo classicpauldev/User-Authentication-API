@@ -1,1 +1,1 @@
-Improved JWT token handling and expiration logic
+Optimized MongoDB queries for authentication performance
