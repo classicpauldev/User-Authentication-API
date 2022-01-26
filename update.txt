@@ -1,1 +1,1 @@
-Implemented integration tests for user registration and login
+Fixed minor authentication-related bugs and improved UX
