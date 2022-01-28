@@ -1,1 +1,1 @@
-Enhanced security with role-based access control (RBAC)
+Updated documentation for authentication API
