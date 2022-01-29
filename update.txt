@@ -1,1 +1,1 @@
-Updated documentation for authentication API
+Deployed user authentication API to a local test server
