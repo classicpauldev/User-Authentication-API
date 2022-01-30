@@ -1,4 +1,4 @@
-import { Controller, Get, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, UseGuards, NotFoundException } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
@@ -11,7 +11,7 @@ export class UsersController {
   async findOne(@Param('id') id: string) {
     const user = await this.usersService.findById(id);
     if (!user) {
-      return { message: 'User not found' };
+      throw new NotFoundException('User not found');
     }
     return {
       id: user._id,
