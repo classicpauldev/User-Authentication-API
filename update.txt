@@ -1,1 +1,1 @@
-Implemented password reset functionality
+Added multi-factor authentication (MFA) support
