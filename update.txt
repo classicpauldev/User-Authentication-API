@@ -1,1 +1,1 @@
-Installed required dependencies
+Configured MongoDB connection
