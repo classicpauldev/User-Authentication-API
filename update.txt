@@ -1,1 +1,1 @@
-Added multi-factor authentication (MFA) support
+Implemented rate-limiting to prevent brute-force attacks
