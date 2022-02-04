@@ -1,1 +1,1 @@
-Implemented rate-limiting to prevent brute-force attacks
+Refactored code for better maintainability
