@@ -1,1 +1,1 @@
-Configured MongoDB connection
+Created User schema and model
