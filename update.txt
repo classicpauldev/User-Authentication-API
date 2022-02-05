@@ -1,1 +1,1 @@
-Created User schema and model
+Generated Users module, controller, and service
