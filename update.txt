@@ -1,1 +1,1 @@
-Implemented user registration functionality
+Set up JWT authentication service
