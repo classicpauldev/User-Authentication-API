@@ -1,1 +1,1 @@
-Set up JWT authentication service
+Added JWT guard for route protection
