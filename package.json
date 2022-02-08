@@ -1,7 +1,7 @@
 {
   "name": "user-auth-api",
   "version": "0.0.1",
-  "description": "",
+  "description": "NestJS user authentication API with JWT and MongoDB",
   "author": "",
   "private": true,
   "license": "UNLICENSED",

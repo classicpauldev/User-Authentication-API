@@ -16,6 +16,7 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  /** Validates user credentials and returns the user if valid. */
   async validateUser(email: string, password: string) {
     const user = await this.usersService.findByEmail(email);
     if (user && (await bcrypt.compare(password, user.password))) {
@@ -24,6 +25,7 @@ export class AuthService {
     return null;
   }
 
+  /** Issues a JWT token for the authenticated user. */
   async login(user: JwtUser) {
     const payload = { sub: String(user._id), email: user.email };
     return {
@@ -32,6 +34,7 @@ export class AuthService {
     };
   }
 
+  /** Registers a new user and returns a JWT token. */
   async register(email: string, password: string) {
     const existing = await this.usersService.findByEmail(email);
     if (existing) {

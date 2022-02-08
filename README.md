@@ -64,6 +64,15 @@ npm run start:prod
 npm test
 ```
 
+## Scripts
+
+- `npm run start:dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run start:prod` - Run production build
+- `npm run test` - Run unit tests
+- `npm run test:e2e` - Run end-to-end tests
+- `npm run lint` - Run ESLint
+
 ## License
 
 UNLICENSED
