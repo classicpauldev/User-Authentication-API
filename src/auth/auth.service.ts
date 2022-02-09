@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException, ConflictException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
-import { BCRYPT_ROUNDS } from '../common/constants';
+import { BCRYPT_ROUNDS, ERROR_EMAIL_EXISTS, ERROR_INVALID_CREDENTIALS } from '../common/constants';
 import * as bcrypt from 'bcryptjs';
 
 interface JwtUser {
@@ -38,7 +38,7 @@ export class AuthService {
   async register(email: string, password: string) {
     const existing = await this.usersService.findByEmail(email);
     if (existing) {
-      throw new ConflictException('Email already registered');
+      throw new ConflictException(ERROR_EMAIL_EXISTS);
     }
     const hashedPassword = await bcrypt.hash(password, BCRYPT_ROUNDS);
     const user = await this.usersService.create(email, hashedPassword);
