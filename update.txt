@@ -1,1 +1,1 @@
-Created login functionality with JWT token
+Refactored user service for validation
