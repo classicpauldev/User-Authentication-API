@@ -1,1 +1,1 @@
-Implemented email notifications for authentication events
+Added logs for authentication success and failure attempts
