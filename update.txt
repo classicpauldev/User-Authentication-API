@@ -1,1 +1,1 @@
-Fixed authentication session timeout issues
+Updated authentication API environment configurations
