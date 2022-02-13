@@ -1,1 +1,1 @@
-Created auth module with passport strategy
+Added bcrypt for password hashing
