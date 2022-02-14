@@ -1,1 +1,1 @@
-Added bcrypt for password hashing
+Set up JWT strategy
