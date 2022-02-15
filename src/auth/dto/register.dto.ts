@@ -5,6 +5,7 @@ import {
   MinLength,
   MaxLength,
 } from 'class-validator';
+import { PASSWORD_MIN_MESSAGE, PASSWORD_MAX_MESSAGE } from '../../common/constants';
 import { Transform } from 'class-transformer';
 
 /** DTO for user registration. */
@@ -18,7 +19,7 @@ export class RegisterDto {
 
   @IsString()
   @IsNotEmpty()
-  @MinLength(6, { message: 'Password must be at least 6 characters' })
-  @MaxLength(72, { message: 'Password must not exceed 72 characters' })
+  @MinLength(6, { message: PASSWORD_MIN_MESSAGE })
+  @MaxLength(72, { message: PASSWORD_MAX_MESSAGE })
   password: string;
 }
