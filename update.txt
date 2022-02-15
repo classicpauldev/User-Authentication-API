@@ -1,1 +1,1 @@
-Deployed final authentication API version
+Updated README with API usage instructions
