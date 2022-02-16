@@ -1,1 +1,1 @@
-Implemented refresh token functionality
+Tested registration and login functionality
