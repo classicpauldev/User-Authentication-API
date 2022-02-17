@@ -1,1 +1,1 @@
-Tested registration and login functionality
+Fixed bugs in user validation logic
