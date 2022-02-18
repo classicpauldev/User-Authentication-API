@@ -1,1 +1,1 @@
-Fixed bugs in user validation logic
+Improved security by adding validation
