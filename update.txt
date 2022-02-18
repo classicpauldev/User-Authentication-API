@@ -1,1 +1,1 @@
-Final commit for user authentication API development
+Implemented JWT token blacklisting for logout
