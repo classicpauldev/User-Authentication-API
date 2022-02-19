@@ -1,1 +1,1 @@
-Implemented JWT token blacklisting for logout
+Added social login integration (Google, Facebook)
