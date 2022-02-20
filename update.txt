@@ -1,1 +1,1 @@
-Added social login integration (Google, Facebook)
+Enhanced user session management with Redis
