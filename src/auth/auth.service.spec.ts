@@ -59,17 +59,17 @@ describe('AuthService', () => {
       const result = await service.validateUser('test@example.com', 'password');
       expect(result).toBeNull();
     });
-  });
-
 
     it("should return null when password doesn't match", async () => {
-      jest.spyOn(usersService, 'findByEmail').mockResolvedValue(mockUser);
+      jest.spyOn(usersService, 'findByEmail').mockResolvedValue(mockUser as never);
       const bcrypt = require('bcryptjs');
       jest.spyOn(bcrypt, 'compare').mockImplementation(() => Promise.resolve(false));
 
       const result = await service.validateUser('test@example.com', 'wrong');
       expect(result).toBeNull();
     });
+  });
+
   describe('register', () => {
     it('should throw ConflictException when email exists', async () => {
       jest.spyOn(usersService, 'findByEmail').mockResolvedValue(mockUser as never);
