@@ -1,1 +1,1 @@
-Enhanced user session management with Redis
+Created a user profile management endpoint
