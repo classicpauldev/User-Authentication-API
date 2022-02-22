@@ -1,1 +1,1 @@
-Set up error handling and validation pipes
+Improved JWT token generation
