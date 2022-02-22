@@ -1,1 +1,1 @@
-Created a user profile management endpoint
+Integrated authentication with frontend app
