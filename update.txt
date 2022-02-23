@@ -1,1 +1,1 @@
-Integrated authentication with frontend app
+Implemented user account deactivation feature
