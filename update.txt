@@ -1,1 +1,1 @@
-Created integration tests for user registration
+Fixed minor bugs and improved UX
