@@ -64,6 +64,13 @@ npm run start:prod
 npm test
 ```
 
+## Project Structure
+
+- `src/auth/` - Authentication module (register, login, JWT)
+- `src/users/` - Users module
+- `src/health/` - Health check
+- `src/common/` - Shared constants
+
 ## Scripts
 
 - `npm run start:dev` - Start development server with hot reload
