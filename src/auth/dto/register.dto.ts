@@ -7,6 +7,7 @@ import {
 } from 'class-validator';
 import { Transform } from 'class-transformer';
 
+/** DTO for user registration. */
 export class RegisterDto {
   @IsEmail()
   @IsNotEmpty()
