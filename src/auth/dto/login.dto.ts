@@ -1,6 +1,7 @@
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
+/** DTO for user login. */
 export class LoginDto {
   @IsEmail()
   @IsNotEmpty()
