@@ -6,6 +6,7 @@ import { CurrentUser } from './decorators/current-user.decorator';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 
+/** Handles authentication endpoints (register, login, me). */
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
