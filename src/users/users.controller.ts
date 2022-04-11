@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { ERROR_USER_NOT_FOUND } from '../common/constants';
 
+/** Handles user-related endpoints. */
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
