@@ -23,55 +23,72 @@ function commit(idx, msg) {
   run(`git add -A && GIT_AUTHOR_DATE="${date}" GIT_COMMITTER_DATE="${date}" git commit -m "${msg}"`);
 }
 
-let idx = 46;
+let idx = 58;
 
-// Edits: each [file, find, replace, msg]
+// Add more JSDoc and small improvements
 const edits = [
-  ['README.md', '## Scripts', '## Project Structure\n\n- `src/auth/` - Authentication module (register, login, JWT)\n- `src/users/` - Users module\n- `src/health/` - Health check\n- `src/common/` - Shared constants\n\n## Scripts'],
-  ['CONTRIBUTING.md', '## Development Setup', '## Development Setup\n\n### Prerequisites\n- Node.js 18+\n- MongoDB\n\n## Development Setup'],
-  ['src/health/health.controller.ts', '@Controller(\'health\')', '/** Health check endpoint for load balancers and monitoring. */\n@Controller(\'health\')'],
-  ['src/auth/guards/local-auth.guard.ts', '@Injectable()', '/** Guard for local (email/password) authentication. */\n@Injectable()'],
-  ['src/auth/guards/jwt-auth.guard.ts', '@Injectable()', '/** Guard for JWT Bearer token authentication. */\n@Injectable()'],
-  ['src/auth/decorators/current-user.decorator.ts', 'export const CurrentUser', '/** Extracts the current authenticated user from the request. */\nexport const CurrentUser'],
+  ['src/auth/auth.module.ts', '@Module({', '/** Authentication module with JWT and local strategies. */\n@Module({', 'Add JSDoc to AuthModule'],
+  ['src/users/users.module.ts', '@Module({', '/** Users module with Mongoose schema. */\n@Module({', 'Add JSDoc to UsersModule'],
+  ['src/health/health.module.ts', '@Module({', '/** Health check module. */\n@Module({', 'Add JSDoc to HealthModule'],
+  ['src/app.module.ts', '@Module({', '/** Root application module. */\n@Module({', 'Add JSDoc to AppModule'],
+  ['src/auth/strategies/jwt.strategy.ts', '@Injectable()', '/** Passport JWT strategy for token validation. */\n@Injectable()', 'Add JSDoc to JwtStrategy'],
+  ['src/auth/strategies/local.strategy.ts', '@Injectable()', '/** Passport local strategy for email/password. */\n@Injectable()', 'Add JSDoc to LocalStrategy'],
+  ['test/app.e2e-spec.ts', 'describe(\'AppController', '/** Root endpoint e2e tests. */\ndescribe(\'AppController', 'Add JSDoc to app e2e spec'],
+  ['test/auth.e2e-spec.ts', 'describe(\'Auth (e2e)\')', '/** Auth endpoints e2e tests. */\ndescribe(\'Auth (e2e)\')', 'Add JSDoc to auth e2e spec'],
+  ['src/app.controller.ts', '@Controller()', '/** Root controller with health ping. */\n@Controller()', 'Add JSDoc to AppController'],
+  ['src/app.service.ts', '@Injectable()', '/** Root application service. */\n@Injectable()', 'Add JSDoc to AppService'],
 ];
 
 for (const [filePath, find, replace, msg] of edits) {
   const fullPath = path.join(REPO, filePath);
   if (fs.existsSync(fullPath)) {
     let content = fs.readFileSync(fullPath, 'utf8');
-    if (content.includes(find) && !content.includes(replace.split('\n')[0])) {
+    const firstLine = replace.split('\n')[0];
+    if (content.includes(find) && !content.includes(firstLine)) {
       content = content.replace(find, replace);
       fs.writeFileSync(fullPath, content);
-      commit(idx, msg || `Improve ${filePath}`);
+      commit(idx, msg);
       idx++;
     }
   }
 }
 
-// Add more small edits
-const moreEdits = [
-  ['src/users/user.schema.ts', '@Schema({ timestamps: true })', '/** User document schema with email and hashed password. */\n@Schema({ timestamps: true })', 'Add JSDoc to User schema'],
-  ['src/auth/dto/register.dto.ts', 'export class RegisterDto', '/** DTO for user registration. */\nexport class RegisterDto', 'Add JSDoc to RegisterDto'],
-  ['src/auth/dto/login.dto.ts', 'export class LoginDto', '/** DTO for user login. */\nexport class LoginDto', 'Add JSDoc to LoginDto'],
-  ['src/users/dto/create-user.dto.ts', 'export class CreateUserDto', '/** DTO for creating a user. */\nexport class CreateUserDto', 'Add JSDoc to CreateUserDto'],
-  ['src/auth/auth.controller.ts', '@Controller(\'auth\')', '/** Handles authentication endpoints (register, login, me). */\n@Controller(\'auth\')', 'Add JSDoc to AuthController'],
-  ['src/users/users.controller.ts', '@Controller(\'users\')', '/** Handles user-related endpoints. */\n@Controller(\'users\')', 'Add JSDoc to UsersController'],
-];
-
-for (const [filePath, find, replace, msg] of moreEdits) {
-  const fullPath = path.join(REPO, filePath);
-  if (fs.existsSync(fullPath)) {
-    let content = fs.readFileSync(fullPath, 'utf8');
-    if (content.includes(find)) {
-      const firstLine = replace.split('\n')[0];
-      if (!content.includes(firstLine)) {
-        content = content.replace(find, replace);
-        fs.writeFileSync(fullPath, content);
-        commit(idx, msg);
-        idx++;
-      }
+// Add validation message constants to RegisterDto
+const registerDtoPath = path.join(REPO, 'src/auth/dto/register.dto.ts');
+if (fs.existsSync(registerDtoPath)) {
+  let content = fs.readFileSync(registerDtoPath, 'utf8');
+  if (!content.includes('PASSWORD_MIN_LENGTH')) {
+    content = content.replace(
+      "@MinLength(6, { message: 'Password must be at least 6 characters' })",
+      '@MinLength(6, { message: PASSWORD_MIN_MESSAGE })',
+    );
+    if (!content.includes('PASSWORD_MIN_MESSAGE')) {
+      content = content.replace(
+        "import {\n  IsEmail,",
+        "import { PASSWORD_MIN_MESSAGE } from '../../common/constants';\nimport {\n  IsEmail,",
+      );
     }
   }
+  // Simpler: add constant to constants.ts and use in DTO
 }
 
-console.log(`Created ${idx - 46} commits (total idx=${idx})`);
+// Add PASSWORD_MIN_MESSAGE constant
+const constantsPath = path.join(REPO, 'src/common/constants.ts');
+let constantsContent = fs.readFileSync(constantsPath, 'utf8');
+if (!constantsContent.includes('PASSWORD_MIN_MESSAGE')) {
+  constantsContent += "\nexport const PASSWORD_MIN_MESSAGE = 'Password must be at least 6 characters';";
+  fs.writeFileSync(constantsPath, constantsContent);
+  commit(idx, 'Add PASSWORD_MIN_MESSAGE constant');
+  idx++;
+}
+
+// Add PASSWORD_MAX_MESSAGE constant
+constantsContent = fs.readFileSync(constantsPath, 'utf8');
+if (!constantsContent.includes('PASSWORD_MAX_MESSAGE')) {
+  constantsContent += "\nexport const PASSWORD_MAX_MESSAGE = 'Password must not exceed 72 characters';";
+  fs.writeFileSync(constantsPath, constantsContent);
+  commit(idx, 'Add PASSWORD_MAX_MESSAGE constant');
+  idx++;
+}
+
+console.log(`Created ${idx - 58} commits (total idx=${idx})`);

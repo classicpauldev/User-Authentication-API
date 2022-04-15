@@ -8,6 +8,7 @@ import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { JWT_EXPIRY } from '../common/constants';
 
+/** Authentication module with JWT and local strategies. */
 @Module({
   imports: [
     UsersModule,
