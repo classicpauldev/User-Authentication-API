@@ -4,6 +4,7 @@ import * as request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from './../src/app.module';
 
+/** Root endpoint e2e tests. */
 describe('AppController (e2e)', () => {
   let app: INestApplication<App>;
 
