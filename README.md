@@ -58,6 +58,14 @@ npm run start:prod
 
 - `GET /health` - Health check
 
+## Docker
+
+Start MongoDB with docker-compose:
+
+```bash
+docker-compose up -d
+```
+
 ## Testing
 
 ```bash
