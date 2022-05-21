@@ -144,4 +144,74 @@ if (!content.includes(': { status: string')) {
   if (commit(idx++, 'Add explicit return type to HealthController.check')) count++;
 }
 
+// Add request body example to README
+readme = fs.readFileSync(readmePath, 'utf8');
+if (!readme.includes('Request body')) {
+  readme = readme.replace(
+    '- `POST /auth/register` - Register a new user (email, password)',
+    '- `POST /auth/register` - Register (body: { email, password })',
+  );
+  fs.writeFileSync(readmePath, readme);
+  if (commit(idx++, 'Add request body format to README')) count++;
+}
+
+// Add login body format
+readme = fs.readFileSync(readmePath, 'utf8');
+if (!readme.includes('login (body:')) {
+  readme = readme.replace(
+    '- `POST /auth/login` - Login and receive JWT token',
+    '- `POST /auth/login` - Login (body: { email, password })',
+  );
+  fs.writeFileSync(readmePath, readme);
+  if (commit(idx++, 'Add login body format to README')) count++;
+}
+
+// Use DEFAULT_JWT_SECRET in auth module
+const authModulePath = path.join(REPO, 'src/auth/auth.module.ts');
+content = fs.readFileSync(authModulePath, 'utf8');
+if (content.includes("'default-secret-change-in-production'") && !content.includes('DEFAULT_JWT_SECRET')) {
+  content = content.replace(
+    "process.env.JWT_SECRET || 'default-secret-change-in-production'",
+    'process.env.JWT_SECRET || DEFAULT_JWT_SECRET',
+  );
+  content = content.replace(
+    "import { JWT_EXPIRY } from '../common/constants';",
+    "import { JWT_EXPIRY, DEFAULT_JWT_SECRET } from '../common/constants';",
+  );
+  fs.writeFileSync(authModulePath, content);
+  if (commit(idx++, 'Use DEFAULT_JWT_SECRET constant in AuthModule')) count++;
+}
+
+// Use DEFAULT_JWT_SECRET in JWT strategy
+const jwtStrategyPath = path.join(REPO, 'src/auth/strategies/jwt.strategy.ts');
+content = fs.readFileSync(jwtStrategyPath, 'utf8');
+if (content.includes("'default-secret-change-in-production'") && !content.includes('DEFAULT_JWT_SECRET')) {
+  content = content.replace(
+    "process.env.JWT_SECRET || 'default-secret-change-in-production'",
+    'process.env.JWT_SECRET || DEFAULT_JWT_SECRET',
+  );
+  content = content.replace(
+    "import { Injectable } from '@nestjs/common';",
+    "import { Injectable } from '@nestjs/common';\nimport { DEFAULT_JWT_SECRET } from '../../common/constants';",
+  );
+  fs.writeFileSync(jwtStrategyPath, content);
+  if (commit(idx++, 'Use DEFAULT_JWT_SECRET in JwtStrategy')) count++;
+}
+
+// Use DEFAULT_MONGODB_URI in app module
+const appModulePath = path.join(REPO, 'src/app.module.ts');
+content = fs.readFileSync(appModulePath, 'utf8');
+if (content.includes("'mongodb://localhost:27017/user-auth-api'") && !content.includes('DEFAULT_MONGODB_URI')) {
+  content = content.replace(
+    "process.env.MONGODB_URI || 'mongodb://localhost:27017/user-auth-api'",
+    'process.env.MONGODB_URI || DEFAULT_MONGODB_URI',
+  );
+  content = content.replace(
+    "import { HealthModule } from './health/health.module';",
+    "import { HealthModule } from './health/health.module';\nimport { DEFAULT_MONGODB_URI } from './common/constants';",
+  );
+  fs.writeFileSync(appModulePath, content);
+  if (commit(idx++, 'Use DEFAULT_MONGODB_URI in AppModule')) count++;
+}
+
 console.log(`Created ${count} commits (idx now ${idx})`);

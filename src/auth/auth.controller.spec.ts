@@ -24,6 +24,11 @@ describe('AuthController', () => {
     expect(controller.login).toBeDefined();
   });
 
+  it('should have register and login methods', () => {
+    expect(controller.register).toBeDefined();
+    expect(controller.login).toBeDefined();
+  });
+
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
