@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Docker Compose for local MongoDB
 - .dockerignore for builds
+- Docker Compose for local MongoDB
+- .dockerignore for builds
 
 - User registration with email and password
 - Login with JWT token issuance
