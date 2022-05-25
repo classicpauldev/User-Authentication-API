@@ -19,6 +19,10 @@ describe('UsersController', () => {
     controller = module.get<UsersController>(UsersController);
   });
 
+  it('should have findOne method', () => {
+    expect(controller.findOne).toBeDefined();
+  });
+
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
