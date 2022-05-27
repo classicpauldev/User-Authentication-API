@@ -47,7 +47,7 @@ npm run start:prod
 ### Auth
 
 - `POST /auth/register` - Register (body: { email, password })
-- `POST /auth/login` - Login and receive JWT token
+- `POST /auth/login` - Login (body: { email, password })
 - `GET /auth/me` - Get current user (requires Bearer token)
 
 ### Users
