@@ -7,3 +7,4 @@ export const ERROR_USER_NOT_FOUND = 'User not found';
 
 export const PASSWORD_MIN_MESSAGE = 'Password must be at least 6 characters';
 export const PASSWORD_MAX_MESSAGE = 'Password must not exceed 72 characters';
+export const DEFAULT_JWT_SECRET = 'default-secret-change-in-production';
