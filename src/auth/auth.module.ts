@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { JWT_EXPIRY } from '../common/constants';
+import { JWT_EXPIRY, DEFAULT_JWT_SECRET } from '../common/constants';
 
 /** Authentication module with JWT and local strategies. */
 @Module({
@@ -14,7 +14,7 @@ import { JWT_EXPIRY } from '../common/constants';
     UsersModule,
     PassportModule,
     JwtModule.register({
-      secret: process.env.JWT_SECRET || 'default-secret-change-in-production',
+      secret: process.env.JWT_SECRET || DEFAULT_JWT_SECRET,
       signOptions: { expiresIn: JWT_EXPIRY },
     }),
   ],
