@@ -37,6 +37,12 @@ describe('UsersService', () => {
     expect(service).toBeDefined();
   });
 
+
+    it('should return null when user not found', async () => {
+      mockExec.mockResolvedValue(null);
+      const result = await service.findByEmail('nonexistent@example.com');
+      expect(result).toBeNull();
+    });
   describe('findByEmail', () => {
     it('should return user when found', async () => {
       const user = { email: 'test@example.com', password: 'hashed' };
