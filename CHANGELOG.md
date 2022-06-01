@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [0.1.0] - 2022-12-31
 
 ### Added
+- Docker Compose for local MongoDB
+- .dockerignore for builds
 
 - User registration with email and password
 - Login with JWT token issuance
