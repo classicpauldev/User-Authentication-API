@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { HealthModule } from './health/health.module';
+import { DEFAULT_MONGODB_URI } from './common/constants';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -10,7 +11,7 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      process.env.MONGODB_URI || 'mongodb://localhost:27017/user-auth-api',
+      process.env.MONGODB_URI || DEFAULT_MONGODB_URI,
     ),
     UsersModule,
     AuthModule,
