@@ -120,6 +120,31 @@ const edits = [
     },
     'Add homepage field to package.json',
   ],
+  [
+    'src/auth/dto/register.dto.ts',
+    () => {
+      const p = path.join(REPO, 'src/auth/dto/register.dto.ts');
+      let c = fs.readFileSync(p, 'utf8');
+      if (!c.includes('MIN_PASSWORD_LENGTH')) {
+        c = c.replace(
+          'import { PASSWORD_MIN_MESSAGE, PASSWORD_MAX_MESSAGE } from',
+          "import { PASSWORD_MIN_MESSAGE, PASSWORD_MAX_MESSAGE, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from",
+        );
+        c = c.replace(
+          '@MinLength(6, { message: PASSWORD_MIN_MESSAGE })',
+          '@MinLength(MIN_PASSWORD_LENGTH, { message: PASSWORD_MIN_MESSAGE })',
+        );
+        c = c.replace(
+          '@MaxLength(72, { message: PASSWORD_MAX_MESSAGE })',
+          '@MaxLength(MAX_PASSWORD_LENGTH, { message: PASSWORD_MAX_MESSAGE })',
+        );
+        fs.writeFileSync(p, c);
+        return true;
+      }
+      return false;
+    },
+    'Use MIN_PASSWORD_LENGTH and MAX_PASSWORD_LENGTH in RegisterDto',
+  ],
 ];
 
 for (const [, editFn, msg] of edits) {
