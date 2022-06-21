@@ -88,6 +88,11 @@ npm test
 - `npm run test:e2e` - Run end-to-end tests
 - `npm run lint` - Run ESLint
 
+## Troubleshooting
+
+- Ensure MongoDB is running before starting the app
+- Check that PORT and MONGODB_URI are set correctly in .env
+
 ## License
 
 UNLICENSED
