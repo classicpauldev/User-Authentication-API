@@ -89,5 +89,9 @@
     "authentication",
     "jwt",
     "mongodb"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/user-auth-api.git"
+  }
 }
