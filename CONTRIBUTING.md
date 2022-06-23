@@ -28,3 +28,7 @@ npm test
 3. Make your changes
 4. Run tests
 5. Submit a pull request
+
+## Reporting Bugs
+
+Include steps to reproduce and expected vs actual behavior.
