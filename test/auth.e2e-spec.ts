@@ -20,6 +20,13 @@ describe('Auth (e2e)', () => {
     await app.close();
   });
 
+  it('POST /auth/register validates email', () => {
+    return request(app.getHttpServer())
+      .post('/auth/register')
+      .send({ email: 'invalid', password: 'short' })
+      .expect(400);
+  });
+
   it('GET /health returns ok', () => {
     return request(app.getHttpServer())
       .get('/health')
