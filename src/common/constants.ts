@@ -9,3 +9,5 @@ export const PASSWORD_MIN_MESSAGE = 'Password must be at least 6 characters';
 export const PASSWORD_MAX_MESSAGE = 'Password must not exceed 72 characters';
 export const DEFAULT_JWT_SECRET = 'default-secret-change-in-production';
 export const DEFAULT_MONGODB_URI = 'mongodb://localhost:27017/user-auth-api';
+export const MIN_PASSWORD_LENGTH = 6;
+export const MAX_PASSWORD_LENGTH = 72;
