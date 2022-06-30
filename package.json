@@ -96,5 +96,6 @@
   },
   "bugs": {
     "url": "https://github.com/example/user-auth-api/issues"
-  }
+  },
+  "homepage": "https://github.com/example/user-auth-api#readme"
 }
