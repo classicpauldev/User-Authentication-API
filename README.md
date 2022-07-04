@@ -96,3 +96,7 @@ npm test
 ## License
 
 UNLICENSED
+
+## Security
+
+Never commit .env or expose JWT_SECRET. Use strong passwords in production.
