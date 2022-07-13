@@ -15,4 +15,7 @@ async function bootstrap(): Promise<void> {
   app.enableShutdownHooks();
   await app.listen(process.env.PORT ?? DEFAULT_PORT);
 }
-bootstrap();
+bootstrap().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
