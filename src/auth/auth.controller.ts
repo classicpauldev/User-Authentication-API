@@ -17,6 +17,7 @@ export class AuthController {
     return { id: user._id, email: user.email };
   }
 
+  // Public routes (no auth required)
   @Post('register')
   async register(@Body() dto: RegisterDto) {
     return this.authService.register(dto.email, dto.password);

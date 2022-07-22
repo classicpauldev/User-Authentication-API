@@ -131,26 +131,13 @@ const edits = [
   [() => {
     const p = path.join(REPO, 'src/auth/auth.controller.ts');
     let c = fs.readFileSync(p, 'utf8');
-    if (!c.includes('@Public()')) {
-      return false;
-    }
     if (!c.includes('// Public routes')) {
-      c = c.replace('@Post(\'register\')', '// Public routes\n  @Post(\'register\')');
+      c = c.replace('@Post(\'register\')', '// Public routes (no auth required)\n  @Post(\'register\')');
       fs.writeFileSync(p, c);
       return true;
     }
     return false;
   }, 'Add comment for public routes in AuthController'],
-  [() => {
-    const p = path.join(REPO, 'src/users/user.schema.ts');
-    let c = fs.readFileSync(p, 'utf8');
-    if (!c.includes('select: false')) {
-      c = c.replace('@Prop({ required: true })\n  password: string;', '@Prop({ required: true, select: false })\n  password: string;');
-      fs.writeFileSync(p, c);
-      return true;
-    }
-    return false;
-  }, 'Add select: false to password in User schema for default excludes'],
 ];
 
 
