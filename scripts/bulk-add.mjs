@@ -28,7 +28,7 @@ function commit(idx, msg) {
   return run(`git add -A && GIT_AUTHOR_DATE="${date}" GIT_COMMITTER_DATE="${date}" git commit -m "${msg.replace(/"/g, '\\"')}"`);
 }
 
-let idx = 102;
+let idx = 112;
 let count = 0;
 
 // Add many small edits - each returns [shouldCommit, message]
@@ -70,19 +70,6 @@ const edits = [
     }
     return false;
   }, 'Add *.env.local to .gitignore'],
-  [() => {
-    const p = path.join(REPO, 'src/health/health.controller.ts');
-    let c = fs.readFileSync(p, 'utf8');
-    if (!c.includes("status: 'ok'")) {
-      return false;
-    }
-    if (!c.includes('readonly')) {
-      c = c.replace('@Get()\n  check()', '@Get()\n  readonly check()');
-      fs.writeFileSync(p, c);
-      return true;
-    }
-    return false;
-  }, 'Mark HealthController.check as readonly'],
   [() => {
     const p = path.join(REPO, 'nest-cli.json');
     let c = fs.readFileSync(p, 'utf8');
@@ -134,14 +121,38 @@ const edits = [
   [() => {
     const p = path.join(REPO, 'README.md');
     let c = fs.readFileSync(p, 'utf8');
-    if (!c.includes('e2e')) {
+    if (!c.includes('test:e2e')) {
       c = c.replace('```bash\nnpm test\n```', '```bash\nnpm test\nnpm run test:e2e  # E2E tests (requires MongoDB)\n```');
       fs.writeFileSync(p, c);
       return true;
     }
     return false;
   }, 'Add e2e test command to README'],
+  [() => {
+    const p = path.join(REPO, 'src/auth/auth.controller.ts');
+    let c = fs.readFileSync(p, 'utf8');
+    if (!c.includes('@Public()')) {
+      return false;
+    }
+    if (!c.includes('// Public routes')) {
+      c = c.replace('@Post(\'register\')', '// Public routes\n  @Post(\'register\')');
+      fs.writeFileSync(p, c);
+      return true;
+    }
+    return false;
+  }, 'Add comment for public routes in AuthController'],
+  [() => {
+    const p = path.join(REPO, 'src/users/user.schema.ts');
+    let c = fs.readFileSync(p, 'utf8');
+    if (!c.includes('select: false')) {
+      c = c.replace('@Prop({ required: true })\n  password: string;', '@Prop({ required: true, select: false })\n  password: string;');
+      fs.writeFileSync(p, c);
+      return true;
+    }
+    return false;
+  }, 'Add select: false to password in User schema for default excludes'],
 ];
+
 
 for (const [editFn, msg] of edits) {
   if (editFn()) {
