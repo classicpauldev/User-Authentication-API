@@ -104,3 +104,7 @@ Never commit .env or expose JWT_SECRET. Use strong passwords in production.
 ## Contributing
 
 See CONTRIBUTING.md for guidelines.
+
+## Changelog
+
+See CHANGELOG.md for version history.
