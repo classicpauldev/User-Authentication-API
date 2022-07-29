@@ -32,3 +32,7 @@ npm test
 ## Reporting Bugs
 
 Include steps to reproduce and expected vs actual behavior.
+
+## Running the App
+
+npm run start:dev - starts development server with hot reload
