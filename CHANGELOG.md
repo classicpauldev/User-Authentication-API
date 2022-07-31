@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [0.1.0] - 2022-12-31
 
 ### Added
+- ValidationPipe in e2e tests
 - Error handling in bootstrap
 - Docker Compose for local MongoDB
 - .dockerignore for builds
