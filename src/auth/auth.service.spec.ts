@@ -71,7 +71,14 @@ describe('AuthService', () => {
   });
 
   describe('register', () => {
-    it('should throw ConflictException when email exists', async () => {
+    it('should call jwtService.sign on successful register', async () => {
+    jest.spyOn(usersService, 'findByEmail').mockResolvedValue(null);
+    jest.spyOn(usersService, 'create').mockResolvedValue(mockUser as never);
+    await service.register('new@example.com', 'password123');
+    expect(jwtService.sign).toHaveBeenCalled();
+  });
+
+  it('should throw ConflictException when email exists', async () => {
       jest.spyOn(usersService, 'findByEmail').mockResolvedValue(mockUser as never);
 
       await expect(
