@@ -43,6 +43,15 @@ describe('UsersService', () => {
       const result = await service.findByEmail('nonexistent@example.com');
       expect(result).toBeNull();
     });
+  describe('findById', () => {
+    it('should return user when found', async () => {
+      const user = { _id: 'id', email: 'test@example.com' };
+      mockExec.mockResolvedValue(user);
+      const result = await service.findById('id');
+      expect(result).toEqual(user);
+    });
+  });
+
   describe('findByEmail', () => {
     it('should return user when found', async () => {
       const user = { email: 'test@example.com', password: 'hashed' };
