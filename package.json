@@ -83,5 +83,11 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "keywords": [
+    "nestjs",
+    "authentication",
+    "jwt",
+    "mongodb"
+  ]
 }
