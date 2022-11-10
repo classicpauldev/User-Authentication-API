@@ -25,6 +25,12 @@ npm install
 
 ## Configuration
 
+## Environment Variables
+
+- `PORT` - Server port (default: 3000)
+- `MONGODB_URI` - MongoDB connection string
+- `JWT_SECRET` - Secret for JWT signing
+
 Copy `.env.example` to `.env` and configure:
 
 - `PORT` - Server port (default: 3000)
