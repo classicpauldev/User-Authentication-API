@@ -13,6 +13,7 @@ describe('Auth (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.setGlobalPrefix('api/v1');
     app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
     await app.init();
   });
@@ -21,16 +22,16 @@ describe('Auth (e2e)', () => {
     await app.close();
   });
 
-  it('POST /auth/register validates email', () => {
+  it('POST /api/v1/auth/register validates email', () => {
     return request(app.getHttpServer())
-      .post('/auth/register')
+      .post('/api/v1/auth/register')
       .send({ email: 'invalid', password: 'short' })
       .expect(400);
   });
 
-  it('GET /health returns ok', () => {
+  it('GET /api/v1/health returns ok', () => {
     return request(app.getHttpServer())
-      .get('/health')
+      .get('/api/v1/health')
       .expect(200)
       .expect((res) => {
         expect(res.body.status).toBe('ok');
