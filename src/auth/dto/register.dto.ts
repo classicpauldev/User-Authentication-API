@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsEmail,
   IsNotEmpty,
@@ -10,6 +11,7 @@ import { Transform } from 'class-transformer';
 
 /** DTO for user registration. */
 export class RegisterDto {
+  @ApiProperty({ example: 'user@example.com' })
   @IsEmail()
   @IsNotEmpty()
   @Transform(({ value }) =>
@@ -17,6 +19,7 @@ export class RegisterDto {
   )
   email: string;
 
+  @ApiProperty({ example: 'password123', minLength: 6 })
   @IsString()
   @IsNotEmpty()
   @MinLength(MIN_PASSWORD_LENGTH, { message: PASSWORD_MIN_MESSAGE })
