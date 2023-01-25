@@ -11,6 +11,10 @@ A NestJS-based REST API for user registration, login, and JWT authentication.
 - MongoDB storage with Mongoose
 - Request validation with class-validator
 - Health check endpoint
+- Swagger/OpenAPI documentation at /api/docs
+- Rate limiting (Throttler)
+- Security headers (Helmet)
+- API versioning (/api/v1 prefix)
 
 ## Prerequisites
 
@@ -44,19 +48,25 @@ npm run start:prod
 
 ## API Endpoints
 
+All endpoints are prefixed with `/api/v1`.
+
 ### Auth
 
-- `POST /auth/register` - Register (body: { email, password })
-- `POST /auth/login` - Login (body: { email, password })
-- `GET /auth/me` - Get current user (requires Bearer token)
+- `POST /api/v1/auth/register` - Register (body: { email, password })
+- `POST /api/v1/auth/login` - Login (body: { email, password })
+- `GET /api/v1/auth/me` - Get current user (requires Bearer token)
 
 ### Users
 
-- `GET /users/:id` - Get user by ID (requires Bearer token)
+- `GET /api/v1/users/:id` - Get user by ID (requires Bearer token)
 
 ### Health
 
-- `GET /health` - Health check
+- `GET /api/v1/health` - Health check
+
+### API Documentation
+
+Interactive Swagger docs available at `/api/docs` when the server is running.
 
 ## Docker
 
