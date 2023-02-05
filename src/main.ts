@@ -5,11 +5,13 @@ import helmet from 'helmet';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { DEFAULT_PORT } from './common/constants';
+import { AllExceptionsFilter } from './common/http-exception.filter';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
+  app.useGlobalFilters(new AllExceptionsFilter());
   app.use(helmet());
   app.enableCors();
   app.setGlobalPrefix('api/v1');
