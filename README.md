@@ -70,10 +70,16 @@ Interactive Swagger docs available at `/api/docs` when the server is running.
 
 ## Docker
 
-Start MongoDB with docker-compose:
+### Running MongoDB
 
 ```bash
 docker-compose up -d
+```
+
+### Building the API
+```bash
+docker build -t user-auth-api .
+docker run -p 3000:3000 --env-file .env user-auth-api
 ```
 
 ## Testing
