@@ -11,3 +11,5 @@ export const DEFAULT_JWT_SECRET = 'default-secret-change-in-production';
 export const DEFAULT_MONGODB_URI = 'mongodb://localhost:27017/user-auth-api';
 export const MIN_PASSWORD_LENGTH = 6;
 export const MAX_PASSWORD_LENGTH = 72;
+export const THROTTLE_TTL = 60000; // 1 minute
+export const THROTTLE_LIMIT = 10; // requests per TTL
