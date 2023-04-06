@@ -5,3 +5,8 @@ dist
 *.log
 coverage
 .nyc_output
+
+test
+scripts
+*.md
+.git
