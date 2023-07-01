@@ -7,3 +7,5 @@
 ## 2023-06-01 - Improve Swagger document with contact info
 
 ## 2023-06-15 - Add skipThrottle for health endpoint
+
+## 2023-07-01 - Extract Throttler config to use constants
