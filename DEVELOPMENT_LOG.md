@@ -9,3 +9,5 @@
 ## 2023-06-15 - Add skipThrottle for health endpoint
 
 ## 2023-07-01 - Extract Throttler config to use constants
+
+## 2023-07-15 - Add request timeout configuration
