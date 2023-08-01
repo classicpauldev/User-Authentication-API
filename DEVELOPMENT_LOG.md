@@ -11,3 +11,5 @@
 ## 2023-07-01 - Extract Throttler config to use constants
 
 ## 2023-07-15 - Add request timeout configuration
+
+## 2023-08-01 - Improve JSDoc in configuration.ts
