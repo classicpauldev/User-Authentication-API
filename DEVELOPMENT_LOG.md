@@ -13,3 +13,5 @@
 ## 2023-07-15 - Add request timeout configuration
 
 ## 2023-08-01 - Improve JSDoc in configuration.ts
+
+## 2023-08-15 - Add version to Swagger document
