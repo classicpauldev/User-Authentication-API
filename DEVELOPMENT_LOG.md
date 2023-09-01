@@ -15,3 +15,5 @@
 ## 2023-08-01 - Improve JSDoc in configuration.ts
 
 ## 2023-08-15 - Add version to Swagger document
+
+## 2023-09-01 - Update package.json version to 0.2.0
