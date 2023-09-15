@@ -17,3 +17,5 @@
 ## 2023-08-15 - Add version to Swagger document
 
 ## 2023-09-01 - Update package.json version to 0.2.0
+
+## 2023-09-15 - Add OpenAPI 3.0 spec export note to README
