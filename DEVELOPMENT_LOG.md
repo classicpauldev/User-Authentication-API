@@ -19,3 +19,5 @@
 ## 2023-09-01 - Update package.json version to 0.2.0
 
 ## 2023-09-15 - Add OpenAPI 3.0 spec export note to README
+
+## 2023-10-01 - Improve CORS configuration for production
