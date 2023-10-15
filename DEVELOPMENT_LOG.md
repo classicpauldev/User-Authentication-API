@@ -21,3 +21,5 @@
 ## 2023-09-15 - Add OpenAPI 3.0 spec export note to README
 
 ## 2023-10-01 - Improve CORS configuration for production
+
+## 2023-10-15 - Add validation for MongoDB connection
