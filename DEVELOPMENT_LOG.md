@@ -23,3 +23,5 @@
 ## 2023-10-01 - Improve CORS configuration for production
 
 ## 2023-10-15 - Add validation for MongoDB connection
+
+## 2023-11-01 - Improve error logging in exception filter
