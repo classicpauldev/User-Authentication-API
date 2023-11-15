@@ -25,3 +25,5 @@
 ## 2023-10-15 - Add validation for MongoDB connection
 
 ## 2023-11-01 - Improve error logging in exception filter
+
+## 2023-11-15 - Add content-type validation for JSON requests
