@@ -29,3 +29,5 @@
 ## 2023-11-15 - Add content-type validation for JSON requests
 
 ## 2023-12-01 - Add 2023 year-end dependency updates
+
+## 2023-12-15 - Document rate limit headers in README
