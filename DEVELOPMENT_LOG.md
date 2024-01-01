@@ -31,3 +31,5 @@
 ## 2023-12-01 - Add 2023 year-end dependency updates
 
 ## 2023-12-15 - Document rate limit headers in README
+
+## 2024-01-01 - Happy New Year - update CHANGELOG for 2024
