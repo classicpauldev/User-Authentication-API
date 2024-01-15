@@ -33,3 +33,5 @@
 ## 2023-12-15 - Document rate limit headers in README
 
 ## 2024-01-01 - Happy New Year - update CHANGELOG for 2024
+
+## 2024-01-15 - Add JSON body size limit configuration
