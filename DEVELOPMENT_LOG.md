@@ -35,3 +35,5 @@
 ## 2024-01-01 - Happy New Year - update CHANGELOG for 2024
 
 ## 2024-01-15 - Add JSON body size limit configuration
+
+## 2024-02-01 - Improve Docker build cache strategy
