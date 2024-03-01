@@ -39,3 +39,5 @@
 ## 2024-02-01 - Improve Docker build cache strategy
 
 ## 2024-02-15 - Add NODE_ENV to Dockerfile
+
+## 2024-03-01 - Add production optimization notes
