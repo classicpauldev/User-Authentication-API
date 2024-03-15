@@ -41,3 +41,5 @@
 ## 2024-02-15 - Add NODE_ENV to Dockerfile
 
 ## 2024-03-01 - Add production optimization notes
+
+## 2024-03-15 - Improve health check response format
