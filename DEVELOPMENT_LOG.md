@@ -47,3 +47,5 @@
 ## 2024-04-01 - Add security best practices to README
 
 ## 2024-04-15 - Update Swagger to use bearer auth scheme
+
+## 2024-05-01 - Add request ID to logged requests
