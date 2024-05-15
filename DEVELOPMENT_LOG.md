@@ -49,3 +49,5 @@
 ## 2024-04-15 - Update Swagger to use bearer auth scheme
 
 ## 2024-05-01 - Add request ID to logged requests
+
+## 2024-05-15 - Improve ThrottlerGuard skip logic
