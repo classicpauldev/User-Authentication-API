@@ -51,3 +51,5 @@
 ## 2024-05-01 - Add request ID to logged requests
 
 ## 2024-05-15 - Improve ThrottlerGuard skip logic
+
+## 2024-06-01 - Add compression middleware option
