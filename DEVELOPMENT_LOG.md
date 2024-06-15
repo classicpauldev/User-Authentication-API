@@ -53,3 +53,5 @@
 ## 2024-05-15 - Improve ThrottlerGuard skip logic
 
 ## 2024-06-01 - Add compression middleware option
+
+## 2024-06-15 - Update nest-cli for production build
