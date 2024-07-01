@@ -55,3 +55,5 @@
 ## 2024-06-01 - Add compression middleware option
 
 ## 2024-06-15 - Update nest-cli for production build
+
+## 2024-07-01 - Add deployment checklist to CONTRIBUTING
