@@ -59,3 +59,5 @@
 ## 2024-07-01 - Add deployment checklist to CONTRIBUTING
 
 ## 2024-07-15 - Improve e2e test reliability
+
+## 2024-08-01 - Add MongoDB index recommendations
