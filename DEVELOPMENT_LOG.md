@@ -61,3 +61,5 @@
 ## 2024-07-15 - Improve e2e test reliability
 
 ## 2024-08-01 - Add MongoDB index recommendations
+
+## 2024-08-15 - Update .env.example with new vars
