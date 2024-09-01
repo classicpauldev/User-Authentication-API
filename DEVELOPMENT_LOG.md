@@ -63,3 +63,5 @@
 ## 2024-08-01 - Add MongoDB index recommendations
 
 ## 2024-08-15 - Update .env.example with new vars
+
+## 2024-09-01 - Add API versioning documentation
