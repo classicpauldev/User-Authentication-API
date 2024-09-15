@@ -65,3 +65,5 @@
 ## 2024-08-15 - Update .env.example with new vars
 
 ## 2024-09-01 - Add API versioning documentation
+
+## 2024-09-15 - Improve type safety in auth service
