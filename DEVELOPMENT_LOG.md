@@ -67,3 +67,5 @@
 ## 2024-09-01 - Add API versioning documentation
 
 ## 2024-09-15 - Improve type safety in auth service
+
+## 2024-10-01 - Add refresh token placeholder in docs
