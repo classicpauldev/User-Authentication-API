@@ -69,3 +69,5 @@
 ## 2024-09-15 - Improve type safety in auth service
 
 ## 2024-10-01 - Add refresh token placeholder in docs
+
+## 2024-10-15 - Improve JWT payload typing
