@@ -71,3 +71,5 @@
 ## 2024-10-01 - Add refresh token placeholder in docs
 
 ## 2024-10-15 - Improve JWT payload typing
+
+## 2024-11-01 - Add monitoring readiness note
