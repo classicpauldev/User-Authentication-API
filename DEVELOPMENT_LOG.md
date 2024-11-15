@@ -73,3 +73,5 @@
 ## 2024-10-15 - Improve JWT payload typing
 
 ## 2024-11-01 - Add monitoring readiness note
+
+## 2024-11-15 - Update dependencies for 2024
