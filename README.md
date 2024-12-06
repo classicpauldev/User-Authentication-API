@@ -124,3 +124,7 @@ See CONTRIBUTING.md for guidelines.
 ## Changelog
 
 See CHANGELOG.md for version history.
+
+## Performance
+
+Use connection pooling for MongoDB in production. Consider Redis for session storage.
