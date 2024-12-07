@@ -128,3 +128,7 @@ See CHANGELOG.md for version history.
 ## Performance
 
 Use connection pooling for MongoDB in production. Consider Redis for session storage.
+
+## Monitoring
+
+Health endpoint at /api/v1/health for load balancer checks.
