@@ -40,3 +40,7 @@ npm run start:dev - starts development server with hot reload
 ## Testing
 
 Run npm test before submitting PRs.
+
+## Commits
+
+Use conventional commit messages.
