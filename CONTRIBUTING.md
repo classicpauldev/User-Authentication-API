@@ -44,3 +44,7 @@ Run npm test before submitting PRs.
 ## Commits
 
 Use conventional commit messages.
+
+## Branches
+
+Create feature branches from main.
