@@ -77,3 +77,5 @@
 ## 2024-11-15 - Update dependencies for 2024
 
 ## 2024-12-01 - Add 2024 year-end summary to CHANGELOG
+
+## 2024-12-15 - Final 2024 updates and polish
