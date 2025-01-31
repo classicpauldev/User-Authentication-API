@@ -14,7 +14,8 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get user by ID' })
-  async findOne(@Param('id') id: string) {
+  async /** Retrieves a user by ID. Requires authentication. */
+  findOne(@Param('id') id: string) {
     const user = await this.usersService.findById(id);
     if (!user) {
       throw new NotFoundException(ERROR_USER_NOT_FOUND);
