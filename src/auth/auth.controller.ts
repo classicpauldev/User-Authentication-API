@@ -17,6 +17,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get current user profile' })
+  /** Returns the currently authenticated user. */
   getProfile(@CurrentUser() user: { _id: unknown; email: string }) {
     return { id: user._id, email: user.email };
   }
