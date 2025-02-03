@@ -13,3 +13,5 @@ export const MIN_PASSWORD_LENGTH = 6;
 export const MAX_PASSWORD_LENGTH = 72;
 export const THROTTLE_TTL = 60000; // 1 minute
 export const THROTTLE_LIMIT = 10; // requests per TTL
+
+export const DEFAULT_PAGE = 1;
