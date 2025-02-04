@@ -15,3 +15,5 @@ export const THROTTLE_TTL = 60000; // 1 minute
 export const THROTTLE_LIMIT = 10; // requests per TTL
 
 export const DEFAULT_PAGE = 1;
+
+export const DEFAULT_LIMIT = 10;
