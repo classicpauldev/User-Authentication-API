@@ -22,6 +22,7 @@ describe('AppController', () => {
     it('Test case 5', () => { expect(true).toBe(true); });
     it('Test case 6', () => { expect(true).toBe(true); });
     it('Test case 7', () => { expect(true).toBe(true); });
+    it('Test case 8', () => { expect(true).toBe(true); });
     it('should return "Hello World!"', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
