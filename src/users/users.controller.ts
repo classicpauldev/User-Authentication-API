@@ -10,12 +10,12 @@ import { ERROR_USER_NOT_FOUND } from '../common/constants';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  /** Retrieves a user by ID. Requires authentication. */
   @Get(':id')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get user by ID' })
-  async /** Retrieves a user by ID. Requires authentication. */
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     const user = await this.usersService.findById(id);
     if (!user) {
       throw new NotFoundException(ERROR_USER_NOT_FOUND);
